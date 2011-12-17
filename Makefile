@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+-include /AppleInternal/ServerTools/ServerBuildVariables.xcconfig
 MODULE_NAME = mod_bw
 MODULE_SRC = $(MODULE_NAME).c
 MODULE = $(MODULE_NAME).so
@@ -25,10 +26,11 @@ VERSION=0.8
 DISTRO_FILE = $(MODULE_NAME)-$(VERSION).tgz
 OTHER_SRC = apache_mod_bw.plist apache_mod_bw.txt $(DISTRO_FILE)
 HEADERS =
+export LTFLAGS = --tag=CC
 APXS=/usr/sbin/apxs
 SRCFILES = Makefile $(OTHER_SRC) $(HEADERS)
 INSTALL=/usr/bin/install
-INSTALLDIR := $(shell $(APXS) -q LIBEXECDIR)
+INSTALLDIR := $(SERVER_INSTALL_PATH_PREFIX)$(shell $(APXS) -q LIBEXECDIR)
 VERSIONS_DIR=/usr/local/OpenSourceVersions
 LICENSE_DIR=/usr/local/OpenSourceLicenses
 
