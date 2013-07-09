@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2008 Apple Inc.  All Rights Reserved.
+# Copyright (c) 2008-2013 Apple Inc.  All Rights Reserved.
 # 
 # This file contains Original Code and/or Modifications of Original Code
 # as defined in and that are subject to the Apple Public Source License
@@ -18,6 +18,7 @@
 #
 
 -include /AppleInternal/ServerTools/ServerBuildVariables.xcconfig
+
 MODULE_NAME = mod_bw
 MODULE_SRC = $(MODULE_NAME).c
 MODULE = $(MODULE_NAME).so
